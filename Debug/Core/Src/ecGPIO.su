@@ -1,0 +1,12 @@
+../Core/Src/ecGPIO.c:19:6:LED_toggle	4	static
+../Core/Src/ecGPIO.c:25:6:GPIO_init	24	static
+../Core/Src/ecGPIO.c:44:6:GPIO_mode	24	static
+../Core/Src/ecGPIO.c:52:6:GPIO_ospeed	24	static
+../Core/Src/ecGPIO.c:59:6:GPIO_otype	24	static
+../Core/Src/ecGPIO.c:70:6:GPIO_pupd	24	static
+../Core/Src/ecGPIO.c:77:10:GPIO_read	24	static
+../Core/Src/ecGPIO.c:87:6:GPIO_OUT	24	static
+../Core/Src/ecGPIO.c:96:6:GPIO_IN	24	static
+../Core/Src/ecGPIO.c:108:6:GPIO_write	24	static
+../Core/Src/ecGPIO.c:116:6:sevensegment_decoder_init	8	static
+../Core/Src/ecGPIO.c:162:6:sevensegment_decoder	336	static

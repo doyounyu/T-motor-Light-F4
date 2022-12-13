@@ -1,0 +1,7 @@
+../Core/Src/ecRCC.c:13:6:RCC_HSI_init	4	static
+../Core/Src/ecRCC.c:37:6:RCC_HSE_init	4	static
+../Core/Src/ecRCC.c:58:6:RCC_PLL_init	16	static
+../Core/Src/ecRCC.c:134:6:exam_RCC_PLL_init	24	static
+../Core/Src/ecRCC.c:195:6:RCC_GPIOA_enable	4	static
+../Core/Src/ecRCC.c:204:6:RCC_GPIOB_enable	4	static
+../Core/Src/ecRCC.c:212:6:RCC_GPIOC_enable	4	static

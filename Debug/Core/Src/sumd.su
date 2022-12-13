@@ -1,0 +1,4 @@
+../Core/Src/sumd.c:20:6:SUMD_parsing	16	static
+../Core/Src/sumd.c:51:6:ch_data_to_oneShot125	24	static
+../Core/Src/sumd.c:82:9:CRC16_check	24	static
+../Core/Src/sumd.c:99:10:CRC16	24	static

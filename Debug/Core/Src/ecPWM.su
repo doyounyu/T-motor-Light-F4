@@ -1,0 +1,7 @@
+../Core/Src/ecPWM.c:15:6:PWM_init	40	static
+../Core/Src/ecPWM.c:90:6:PWM_period_ms	24	static
+../Core/Src/ecPWM.c:95:6:PWM_period_us	24	static
+../Core/Src/ecPWM.c:103:6:PWM_pulsewidth_ms	40	static
+../Core/Src/ecPWM.c:129:6:PWM_pulsewidth_us	40	static
+../Core/Src/ecPWM.c:157:7:PWM_duty	32	static
+../Core/Src/ecPWM.c:178:6:PWM_pinmap	24	static
