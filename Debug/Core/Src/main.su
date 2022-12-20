@@ -2,7 +2,8 @@
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usart.h:2426:22:LL_USART_TransmitData8	16	static
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:939:22:LL_GPIO_TogglePin	24	static
 ../Core/Src/main.c:41:5:_write	32	static
-../Core/Src/main.c:164:5:main	24	static
-../Core/Src/main.c:436:6:SystemClock_Config	88	static
-../Core/Src/main.c:478:6:motor_setup	8	static
-../Core/Src/main.c:505:6:Error_Handler	4	static,ignoring_inline_asm
+../Core/Src/main.c:211:5:main	24	static
+../Core/Src/main.c:613:6:SystemClock_Config	88	static
+../Core/Src/main.c:655:6:motor_setup	8	static
+../Core/Src/main.c:698:9:IsGyroCalibrated	4	static
+../Core/Src/main.c:712:6:Error_Handler	4	static,ignoring_inline_asm

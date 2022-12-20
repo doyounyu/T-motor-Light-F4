@@ -73,7 +73,7 @@ void TIM_INT_disable(TIM_TypeDef* TIMx);
 
 uint32_t is_UIF(TIM_TypeDef *TIMx);
 void clear_UIF(TIM_TypeDef *TIMx);
-
+void TIM_2kHz(TIM_TypeDef *TIMx);
 
 #ifdef __cplusplus
 }

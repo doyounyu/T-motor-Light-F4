@@ -39,37 +39,72 @@ void TIM_init(TIM_TypeDef* TIMx, uint32_t msec){
 	TIMx->CR1 |= TIM_CR1_CEN;		
 }
 
+/**
+ * Only works for 96MHz PLL clock.
+ */
+void TIM_2kHz(TIM_TypeDef *TIMx)
+	{
+	// Period usec = 1 to 1000
+	// 1us(1MHz, ARR=1) to 65msec (ARR=0xFFFF)
+	uint32_t prescaler = 0;
+	uint32_t ARRval_32 = 0;
+	uint16_t ARRval_16 = 0;
 
+	// Check System CLK: PLL or HSI
+
+
+	if     ((RCC->CFGR & (3<<0)) == 2)      { prescaler = 1; }
+
+
+			if (TIMx== TIM2 || TIMx == TIM5)
+			{
+				ARRval_32 = 48000 ;
+				TIMx->PSC = prescaler-1;
+				TIMx->ARR = ARRval_32-1;
+			}
+
+			else
+			{
+				ARRval_16 = (uint16_t)(48000) ;
+				TIMx->PSC = prescaler-1;
+				TIMx->ARR = ARRval_16-1;
+
+			}
+
+
+}
 
 void TIM_period_us(TIM_TypeDef *TIMx, uint32_t usec)
-	{   
+	{
 	// Period usec = 1 to 1000
 	// 1us(1MHz, ARR=1) to 65msec (ARR=0xFFFF)
 	uint32_t prescaler;
 	uint32_t ARRval_32;
 	uint16_t ARRval_16;
-	
+
 	// Check System CLK: PLL or HSI
 	if     ((RCC->CFGR & (3<<0)) == 2)      { prescaler = 96; }
 	else if((RCC->CFGR & (3<<0)) == 0)      { prescaler = 16; }
-	
-			if (TIMx== TIM2 || TIMx == TIM5) 
+
+			if (TIMx== TIM2 || TIMx == TIM5)
 			{
 				ARRval_32 = usec ;
-				TIMx->PSC = prescaler-1;					
-				TIMx->ARR = ARRval_32-1;	
+				TIMx->PSC = prescaler-1;
+				TIMx->ARR = ARRval_32-1;
 			}
-			
+
 			else
 			{
 				ARRval_16 = (uint16_t)( usec) ;
-				TIMx->PSC = prescaler-1;					
-				TIMx->ARR = ARRval_16-1;	
-			
-			}			
-	
-	
+				TIMx->PSC = prescaler-1;
+				TIMx->ARR = ARRval_16-1;
+
+			}
+
+
 }
+
+
 
 
 void TIM_period_ms(TIM_TypeDef* TIMx, uint32_t msec){ 
