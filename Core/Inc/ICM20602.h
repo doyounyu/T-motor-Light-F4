@@ -1,8 +1,8 @@
 /**
 
  * ICM20602.c
- * @author ChrisP @ M-HIVE
-
+ * @ original author ChrisP @ M-HIVE
+ * @ developer Doyoun Yu
  * This library source code has been created for STM32F4. Only supports SPI.
  *
  * Development environment specifics:
@@ -11,11 +11,14 @@
  * STM32F4 LL Driver(SPI) and HAL Driver(RCC for HAL_Delay() function)
  *
  * Created by ChrisP(Wonyeob Park) @ M-HIVE Embedded Academy, July, 2019
- * Rev. 1.0
+ * Developed by Doyoun Yu, November 2022
+ * Added feature for multiple ICM serieses
+ * Rev. 1.1
  *
  * https://github.com/ChrisWonyeobPark/
  * https://www.udemy.com/course/stm32-drone-programming/?referralCode=E24CB7B1CD9993855D45
  * https://www.inflearn.com/course/stm32cubelde-stm32f4%EB%93%9C%EB%A1%A0-%EA%B0%9C%EB%B0%9C
+ * https://github.com/doyounyu
 */
 
 #ifndef _ICM20602_H
