@@ -1,8 +1,8 @@
 /**
 
  * ICM20602.c
- * @author ChrisP @ M-HIVE
-
+ * @ original author ChrisP @ M-HIVE
+ * @ developer Doyoun Yu
  * This library source code has been created for STM32F4. Only supports SPI.
  *
  * Development environment specifics:
@@ -11,11 +11,14 @@
  * STM32F4 LL Driver(SPI) and HAL Driver(RCC for HAL_Delay() function)
  *
  * Created by ChrisP(Wonyeob Park) @ M-HIVE Embedded Academy, July, 2019
- * Rev. 1.0
+ * Developed by Doyoun Yu, November 2022
+ * Added feature for multiple ICM serieses
+ * Rev. 1.1
  *
  * https://github.com/ChrisWonyeobPark/
  * https://www.udemy.com/course/stm32-drone-programming/?referralCode=E24CB7B1CD9993855D45
  * https://www.inflearn.com/course/stm32cubelde-stm32f4%EB%93%9C%EB%A1%A0-%EA%B0%9C%EB%B0%9C
+ * https://github.com/doyounyu
 */
 
 /**
@@ -27,7 +30,10 @@
 
 Struct_ICM20602 ICM20602;
 
-
+#define ICM20602_WHOAMI 0x68
+#define MPU6000_WHOAMI  0x68
+#define MPU6050_WHOAMI  0x68
+#define ICM42688_WHOAMI 0x47
 
 
 void ICM20602_GPIO_SPI_Initialization(void)
@@ -163,18 +169,18 @@ int ICM20602_Initialization(void)
 	// check WHO_AM_I (0x75)
 	who_am_i = ICM20602_Readbyte(WHO_AM_I); 
 
-	// who am i = 0xAF // MPU60000 : 0x68
-	if(who_am_i == 0x68)
+	
+	if(who_am_i == ICM42688_WHOAMI)
 	{
 		printf("ICM20602 who_am_i = 0x%02x...OK\n\r", who_am_i);
 	}
 	// recheck
-	else if(who_am_i != 0x68)
+	else if(who_am_i != ICM42688_WHOAMI)
 	{
 		who_am_i = ICM20602_Readbyte(WHO_AM_I); // check again WHO_AM_I (0x75)
 
-		if (who_am_i != 0x68){
-			printf( "ICM20602 Not OK: 0x%02x Should be 0x%02x\n\r", who_am_i, 0x68);
+		if (who_am_i != ICM42688_WHOAMI){
+			printf( "ICM20602 Not OK: 0x%02x Should be 0x%02x\n\r", who_am_i, ICM42688_WHOAMI);
 			return 1; //ERROR
 		}
 	}
